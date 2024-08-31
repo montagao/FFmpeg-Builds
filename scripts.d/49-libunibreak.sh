@@ -2,7 +2,7 @@
 #!/bin/bash
 
 SCRIPT_REPO="https://github.com/adah1972/libunibreak.git"
-SCRIPT_COMMIT="3a7a9b99e75fb094f243d4b086b414556a0d9947"
+SCRIPT_COMMIT="ab77349700cc94b0093658edf5e87f5a54fe6652"
 
 ffbuild_enabled() {
     [[ $TARGET != linux* ]] && return -1
