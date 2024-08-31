@@ -52,6 +52,6 @@ ffbuild_configure() {
     echo --enable-libass
 }
 
-ffbuild_unconfigure
+ffbuild_unconfigure() {
     echo --disable-libass
 }
