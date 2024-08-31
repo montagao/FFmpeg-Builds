@@ -29,8 +29,6 @@ dd    # Build libass
     fi
 
     export CFLAGS="$CFLAGS -Dread_file=libass_internal_read_file"
-    export LDFLAGS="$LDFLAGS -L$FFBUILD_PREFIX/lib"
-    export LIBS="-lunibreak"
 
     ./configure "${myconf[@]}"
     make -j$(nproc)
