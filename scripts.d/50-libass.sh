@@ -8,6 +8,9 @@ ffbuild_enabled() {
 }
 
 ffbuild_dockerbuild() {
+    # Install libunibreak dependency
+    apt-get update && apt-get install -y libunibreak-dev
+
     ./autogen.sh
 
     local myconf=(
@@ -15,6 +18,7 @@ ffbuild_dockerbuild() {
         --disable-shared
         --enable-static
         --with-pic
+        --enable-libunibreak  # Enable libunibreak support
     )
 
     if [[ $TARGET == win* || $TARGET == linux* ]]; then
