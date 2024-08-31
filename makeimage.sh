@@ -1,6 +1,15 @@
 #!/bin/bash
+
+# This script sets up a Docker buildx environment and builds Docker images
+# It uses a temporary configuration file and caches build artifacts
+
+# Enable verbose output, exit on error, and propagate pipe failures
 set -xeo pipefail
+
+# Change to the directory containing this script
 cd "$(dirname "$0")"
+
+# Source variables from a utility script
 source util/vars.sh
 
 TMPCFG="$(mktemp --suffix=.toml)"

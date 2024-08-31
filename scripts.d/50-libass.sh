@@ -4,7 +4,7 @@ SCRIPT_REPO="https://github.com/libass/libass.git"
 SCRIPT_COMMIT="c5bb87e2f5d6c18763b4614817c206a4f4d2332a"
 
 LIBUNIBREAK_REPO="https://github.com/adah1972/libunibreak.git"
-LIBUNIBREAK_COMMIT="ab77349"
+LIBUNIBREAK_COMMIT=" c30b4a1c197718996c658f684563883a77c6428b"
 
 ffbuild_enabled() {
     return 0
@@ -53,3 +53,5 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure
+    echo --disable-libass
+}
