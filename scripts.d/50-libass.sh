@@ -28,19 +28,21 @@ ffbuild_dockerbuild() {
         --disable-shared
         --enable-static
         --with-pic
-        --enable-libunibreak  # Enable libunibreak support
+        --enable-libunibreak
     )
 
     if [[ $TARGET == win* || $TARGET == linux* ]]; then
-    myconf+=(
-        --host="$FFBUILD_TOOLCHAIN"
-    )
+        myconf+=(
+            --host="$FFBUILD_TOOLCHAIN"
+        )
     else
         echo "Unknown target"
         return -1
     fi
 
     export CFLAGS="$CFLAGS -Dread_file=libass_internal_read_file"
+    export LDFLAGS="$LDFLAGS -L$FFBUILD_PREFIX/lib"
+    export LIBS="-lunibreak"
 
     ./configure "${myconf[@]}"
     make -j$(nproc)
