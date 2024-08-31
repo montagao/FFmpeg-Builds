@@ -15,7 +15,7 @@ ffbuild_dockerbuild() {
     git clone "$LIBUNIBREAK_REPO" libunibreak
     cd libunibreak
     git checkout "$LIBUNIBREAK_COMMIT"
-    ./configure --prefix="$FFBUILD_PREFIX"
+    ./autogen.sh --prefix="$FFBUILD_PREFIX"
     make -j$(nproc)
     make install
     cd ..
