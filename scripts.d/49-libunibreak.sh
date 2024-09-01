@@ -40,6 +40,6 @@ ffbuild_dockerbuild() {
     make -j$(nproc)
     make install
 
-    # Remove the shared library and keep only the static one
-    rm "$FFBUILD_PREFIX"/lib/libunibreak.so*
+    # Remove the shared library and libtool archive files, keep only the static library
+    rm -f "$FFBUILD_PREFIX"/lib/libunibreak.so* "$FFBUILD_PREFIX"/lib/libunibreak.la
 }
