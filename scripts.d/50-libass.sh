@@ -35,7 +35,7 @@ dd    # Build libass
     make install
 
     # Add libunibreak to the Requires.private field in libass.pc
-    echo "Requires.private: libunibreak" >> "$FFBUILD_PREFIX/lib/pkgconfig/libass.pc"
+    # echo "Requires.private: libunibreak" >> "$FFBUILD_PREFIX/lib/pkgconfig/libass.pc"
 
 }
 
